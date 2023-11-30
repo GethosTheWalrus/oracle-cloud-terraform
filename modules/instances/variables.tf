@@ -84,18 +84,6 @@ variable "instances" {
         is_live_migration_preferred = bool
       })
     })
-    secondary_vnics = map(object({
-      name                   = string
-      primary_ip             = string
-      subnet_id              = string
-      nsg_ids                = list(string)
-      skip_source_dest_check = bool
-      hostname_label         = string
-      secondary_ips = map(object({
-        name       = string
-        ip_address = string
-      }))
-    }))
     optionals = map(any)
     # preserve_boot_volume =  bool (true)
     # boot_volume_id = string
